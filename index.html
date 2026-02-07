@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Villager Murrone</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #222;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      font-size: 2em;
+      padding: 40px 80px;
+      border: none;
+      border-radius: 15px;
+      background-color: #ff5555;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <button id="villagerBtn">VILLAGER MURRONE</button>
+  <audio id="audio" src="villagermurrone.mp3"></audio>
+
+  <script>
+    const button = document.getElementById('villagerBtn');
+    const audio = document.getElementById('audio');
+
+    button.addEventListener('click', () => {
+      audio.play();
+    });
+
+    audio.addEventListener('ended', () => {
+      // Chiude la finestra/tab se aperta da window.open
+      window.close();
+      // Se la pagina è stata aperta direttamente dall'utente, alcuni browser potrebbero non permettere la chiusura
+    });
+  </script>
+</body>
+</html>
